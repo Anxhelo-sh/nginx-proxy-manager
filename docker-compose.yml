@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+    network_mode: host
+    restart: always
+    environment:
+      - CERTBOT_EMAIL=anxhelo_shperdheja@hotmail.com
+      - DOMAIN_LIST=
+    networks:
+      - app-network
+    volumes:
+      - ./nginx/config/conf.d/prod:/etc/nginx/conf.d
+      - letsencrypt:/etc/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"
+
+networks:
+  app-network:
+    external: true
+
+volumes:
+  letsencrypt:
