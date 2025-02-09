@@ -6,7 +6,7 @@ services:
     restart: always
     environment:
       - CERTBOT_EMAIL=anxhelo_shperdheja@hotmail.com
-      - DOMAIN_LIST=
+      - DOMAIN_LIST=159.89.16.65:85
     networks:
       - app-network
     volumes:
