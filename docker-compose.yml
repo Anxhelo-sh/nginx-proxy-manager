@@ -1,11 +1,8 @@
-version: '3.4'
-
 services:
   nginx:
     container_name: nginx
     build:
-      context: ./nginx
-    network_mode: host
+      context: ./
     restart: always
     environment:
       - CERTBOT_EMAIL=anxhelo_shperdheja@hotmail.com
